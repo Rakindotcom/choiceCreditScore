@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="cleartype" content="on" />
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="format-detection" content="telephone=no" />
+
+    <title>ChoiceCreditScore.com is the ultimate resource for obtaining your credit score and protecting your online identity.</title>
+    <meta name="keywords" content="credit scores, credit report, credit check, experian, transunion,equifax, online credit report, online credit scores, credit, credit protection" />
+    <meta name="description" content="See Your Credit Score instantly! View your Credit Score." />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    <script src="/Membersite/rjs/credco/member-credco.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="/Membersite/rcss/credco/member-credco.css" />
+    
+    <link rel="stylesheet" type="text/css" href="/Membersite/rcss/credco/themes/modern-credit.min.css" />
+    <link rel="stylesheet" type="text/css" href="/Membersite/rcss/colors/blue-orange-credco.css" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;display=swap" rel="stylesheet" />
+
+    
+    
+
+    
+    
+
+    <script>
+        function getTrackingUrl() {
+            return (document.location.pathname + document.location.search + document.location.hash);
+        }
+        var contextPath = '/Membersite';
+        function trackElement(value) {
+            var bodyClass = $('body').attr('class');
+            var pageLocation = (bodyClass == "" || bodyClass == undefined) ? window.location.pathname : bodyClass;
+            $.post(contextPath + "/saveGeneralKeyValue.html",{'key' : pageLocation, 'value' : value});
+        }
+
+        // GLOBAL EVENT TRACKING
+        $(function() {
+            trackElement('pageLoaded');
+        });
+        
+    </script>
+
+    
+        <head>
+            <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-56K64S2');</script>
+<!-- End Google Tag Manager -->
+            <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-P7W2JDQ');</script>
+<!-- End Google Tag Manager -->
+        </head>
+        <body>
+            <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-56K64S2"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+            <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P7W2JDQ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+        </body>
+    
+</head>
+<body class="page-login">
+    
+    <nav role="navigation" aria-labelledby="Site Menu" id="navigation" class="shadow-sm py-3 simple-nav">
+    <div class="container-fluid">
+        <div class="d-flex flex-row brading-nav">
+            <div class="d-flex align-self-center pr-lg-3">
+                <a onclick="trackElement('logo')">
+                    <img src="/Membersite/resources/site/images/logo.svg" alt="ChoiceCreditScore.com" class="img-fluid logo" width="130" />
+                </a>
+            </div>              
+        </div>
+    </div>
+</nav>
+
+    <main class="bg-white">
+        <section class="px-2 py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col col-lg-6 m-auto">
+                        <div class="card rounded shadow border-0 p-3" id="login-card">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col"><h1 class="pb-3 section-title pb-4">Log in</h1></div>
+                                    <div class="col text-right small"><a href="/signup.html" title="become a member">Need an account?<br /> Sign up now</a></div>
+                                </div>
+                                
+                                
+                                <form class="pt-2 login-form" method="post" action="/Membersite/login.html">
+                                    <div class="form-group input-email">
+                                        <label for="user" class="control-label mb-1">Email Address</label>
+                                        <input type="email" id="username" name="username" class="form-control" onkeyup="validateEmail()" value="" />
+                                    </div>
+                                    <div class="form-group input-password">
+                                        <label for="password" class="control-label mb-1">Password</label>
+                                        <input type="password" id="password" name="password" class="form-control" onkeyup="validatePassword()" />
+                                    </div>
+                                    <div class="form-group"></div>
+                                    <button id="btn-login" class="btn btn-primary btn-spinner btn-block font-weight-bold">Log in
+                                    </button>
+                                    <a type="button" id="btn-reset" class="btn btn-text btn-spinner btn-block font-weight-bold" href="/Membersite/password-reset.html">Forgot Password</a>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    
+    <footer id="footer" class="pt-3 pt-lg-4 small">
+        <div class="container-fluid">
+            <div class="row no-gutters">
+                <div class="col">
+                    <div class="footer-nav">
+                        <ul class="list-inline m-0">
+                            <li class="list-inline-item">
+                                <a class="pr-2 text-decoration" href="/terms-of-use.html" target="_blank" onclick="trackElement('linkTo_Terms')">Terms and Conditions</a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a class="pr-2" href="/privacy-policy.html" target="_blank" onclick="trackElement('linkTo_PrivacyPolicy')">Privacy Policy</a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="/contact-us.html" target="_blank" onclick="trackElement('linkTo_Contact')">Contact Us</a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="/ccpa.html" target="_blank" onclick="trackElement('linkTo_DoNotSellMyInfo')">Do Not Sell My Info</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="copy-right pt-4 pb-0">
+                        <p>&copy; 2025 &mdash; ChoiceCreditScore.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+        
+        
+        
+        
+    
+        
+        
+            
+        
+        
+            
+        
+    </footer>
+   
+
+    <script>
+        /*<![CDATA[*/
+        function inputFail(name) {
+            $('.input-' + name).addClass('input-error');
+            $('.input-' + name).removeClass('input-success');
+        }
+        function inputSuccessUi(name) {
+            $('.input-' + name).removeClass('input-error');
+            $('.input-' + name).addClass('input-success');
+        }
+        function trimCustomerEmail(email) {
+            if (email != null) {
+                return email.replace(/^\s*/, "").replace(/\s*$/, "");
+            }
+            return "";
+        }
+
+        function validateEmail() {
+            var inputValue = $('.input-email input').val();
+            inputValue = trimCustomerEmail(inputValue); 
+            if (inputValue == "" || inputValue.search(/^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/) == -1 || inputValue.indexOf("www.") == 0) {
+                inputFail('email');
+                return false;
+            } else {
+                inputSuccessUi('email');
+                return true;
+            }
+        }
+        function validatePassword() {
+            var inputValue = $('.input-password input').val();
+            if (inputValue == "" || inputValue.length < 6) {
+                return false;
+            } else {
+                inputSuccessUi('password');
+                return true;
+            }
+        }
+
+        $(function(){
+            $('.form-control').on('load keyup keypress change focus blur', function(){
+                if ( validateEmail() && validatePassword() ) {
+                    $('#btn-login').removeClass('disabled');
+                } else {
+                    $('#btn-login').addClass('disabled');
+                }
+            });
+            $('#btn-login').on('click', function() {
+                if ( validateEmail() && validatePassword() ) {
+                    $('#btn-login').removeClass('disabled');
+                    $(this).html('<span class="spinner-border spinner-border-sm mr-2" role="status" aria-hidden="true"></span>')
+                    $(this).prop('disabled', true);
+                    $('.login-form').trigger('submit');
+                } else {
+                    $('#btn-login').addClass('disabled');
+                    return false
+                }
+            });
+        })
+        /*]]>*/
+    </script>
+
+</body>
+</html>

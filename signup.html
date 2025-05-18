@@ -1,0 +1,1641 @@
+
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    
+
+    
+    <title>ChoiceCreditScore</title>
+    
+    <meta name="description" content="ChoiceCreditScore.com is the ultimate resource for obtaining your credit score and protecting your online identity." />
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="" />
+
+    
+
+    
+
+    
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous" />
+     
+    
+
+
+    
+    <link href="https://www.choicecreditscore.com/resources/t/css/style.css?version=2.35.0" rel="stylesheet" type="text/css" />
+    
+    
+        <link href="https://www.choicecreditscore.com/resources/t/css/layout/credco-signup.css?version=2.35.0" rel="stylesheet" type="text/css" />
+    
+    
+        <link href="https://www.choicecreditscore.com/resources/t/css/themes/modern-credco.min.css?version=2.35.0" rel="stylesheet" type="text/css" />
+    
+    
+    
+    <link href="https://www.choicecreditscore.com/resources/t/css/colors/blue-orange-modern-credco.min.css?version=2.35.0" rel="stylesheet" type="text/css" />
+
+    
+
+
+    
+    
+    
+    <script src="//d15lgjrx5j4lkm.cloudfront.net/js/thirdparty-modern-libs.js"></script>
+    
+        <script>
+            /*<![CDATA[*/
+            $(document).ready(function () {
+                var sendJson = {};
+                sendJson['location'] = 'startLoadOnStandardHeadSection';
+                sendJson['jluvr'] = 'd34a1c5d-394f-4574-b82b-27753ecea6ed';
+                sendJson['adid'] = 'CCS1002S4095';
+                $.ajax({
+                    url: '/userVisitorTracking.ajax',
+                    type: 'POST',
+                    async: true,
+                    data: sendJson,
+                    error: function () {
+                        // Ignore when call fails
+                    },
+                    success: function (result) {
+                        // Ignore
+                    }
+                });
+            });
+            /*]]>*/
+        </script>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&amp;display=swap');
+    </style>
+
+    
+    <script type="text/javascript">
+    
+    /*<![CDATA[*/
+        var nicEvents = {
+            EVENT_PROPERTY_CHANGED: 'property-changed',
+            EVENT_SEALS_INIT: 'seals-init',
+            EVENT_FORMFLEX_INIT: 'formflex-init',
+            EVENT_SIGNUP_NODROP_INIT: 'signup-nodropdown-init',
+            EVENT_FLOATLABELS_INIT: 'floatlabels-init',
+            EVENT_FLOATLABELS_PLUGIN_INIT: 'floatlabels-plugin-init',
+            EVENT_FORMFLEX_PLUGIN_INIT: 'formflex-plugin-init',
+            EVENT_SLIDER_INIT: 'slider-init',
+            EVENT_JQUERY_UI_INIT: 'jquery-ui-init',
+            EVENT_LEAFLET_INIT: 'leaflet-init',
+            EVENT_GEO_UTILS_INIT: 'geo-utils-init',
+            EVENT_SEARCH_INIT: 'search-init',
+            EVENT_OPTINOUT_INIT: 'optinout-init',
+
+
+            subs: [],
+            eventsFired: {},
+            subscribe: function (eventName, f) {
+                this.subs.push({
+                    eventName: eventName,
+                    f: f,
+                });
+                if (this.eventsFired[eventName]) {
+                    f(this.eventsFired[eventName]);
+                }
+            },
+            fire: function (eventName, obj) {
+                params = obj || {};
+                this.eventsFired[eventName] = params;
+
+                for (var i = 0; i < this.subs.length; i++) {
+                    if (this.subs[i].eventName === eventName) {
+                        this.subs[i].f(params);
+                    }
+                }
+            },
+            safeFuncCall : function(eventName, f) {
+                if (this.eventsFired[eventName]) {
+                    return f(this.eventsFired[eventName]);
+                }
+                return false;
+            }
+        };
+        /*]]>*/
+    
+    
+    /*<![CDATA[*/
+
+    function trackGA4(type, adid, partnerid, afid, xid, parent_adid, jluvr, super_partner_id, device_type) {
+        window.dataLayer = window.dataLayer || [];
+        dataLayer.push({
+            'event': type,
+            'adid': adid,
+            'partnerID': partnerid,
+            'afid': afid,
+            'xid': xid,
+            'parentADID': parent_adid,
+            'userId': jluvr,
+            'superPartnerID': super_partner_id,
+            'deviceType': device_type
+        });
+    }
+    function userActionTracking(type, adid, jluvr, afid, xid, parent_adid) {
+        console.log(type, adid, jluvr, afid, xid, parent_adid)
+        var sendJson = {};
+        sendJson['type'] = type;
+        sendJson['adid'] = adid;
+        sendJson['parentAdid'] = parent_adid;
+        sendJson['jluvr'] = jluvr;
+
+        $.ajax({
+            url: '/userActionTracking.ajax',
+            type: 'POST',
+            async: true,
+            data: sendJson,
+            error: function() {
+                //Ignore when call fails
+            },
+            success: function(result) {
+                //Ignore
+            }
+        });
+    }
+    /*]]>*/
+    
+    
+    /*<![CDATA[*/
+    function checkLoginToken() {
+        if (document.login.token.value == "") {
+            setTimeout('checkLoginToken()', 1000);
+        } else {
+            document.getElementById("loginLink").className = "";
+        }
+    }
+    function checkMemberLoginToken() {
+        if (document.login.token.value == "") {
+            setTimeout('checkMemberLoginToken()', 1000);
+        } else {
+            $("#loginLinkButton").attr("onclick", "");
+            $("#loginLinkSpin").removeClass("btn-spin");
+        }
+    }
+    function isMobileView() {
+        return ($('#desktopView').css('display') == 'none');
+    }
+    function isDesktopView() {
+        return (! isMobileView());
+    }
+    /*]]>*/
+    
+    </script>
+    <script src="/resources/t/js/responsive-pageload.js?version=2.35.0"></script>
+    <script src="/resources/t/js/responsive-async.js?version=2.35.0" async="async"></script>
+    
+        <script type="text/javascript">
+            /*<![CDATA[*/
+            dataLayer = [{
+                'adid': 'CCS1002S4095',
+                'partnerID': 4401,
+                'afid': '',
+                'xid': '',
+                'parentADID': 'CCS1002S4095',
+                'userId': 'd34a1c5d-394f-4574-b82b-27753ecea6ed',
+                'superPartnerID': 100,
+                'deviceType': 'desktop'
+            }];
+            /*]]>*/
+        </script>
+        <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-56K64S2');</script>
+<!-- End Google Tag Manager -->
+        <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-P7W2JDQ');</script>
+<!-- End Google Tag Manager -->
+        <body>
+            <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-56K64S2"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+            <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P7W2JDQ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+        </body>
+    
+
+
+    
+
+
+
+    
+
+    
+    
+
+
+    
+
+
+
+    
+    
+        <noscript>
+            <meta http-equiv="refresh" content="0; url=https://www.choicecreditscore.com/signup.html?javascriptDisabled=true" />
+        </noscript>
+    
+    
+        <script>
+            /*<![CDATA[*/
+            $(document).ready(function () {
+                var sendJson = {};
+                sendJson['location'] = 'endLoadOnStandardHeadSection';
+                sendJson['jluvr'] = 'd34a1c5d-394f-4574-b82b-27753ecea6ed';
+                sendJson['adid'] = 'CCS1002S4095';
+                $.ajax({
+                    url: '/userVisitorTracking.ajax',
+                    type: 'POST',
+                    async: true,
+                    data: sendJson,
+                    error: function () {
+                        // Ignore when call fails
+                    },
+                    success: function (result) {
+                        // Ignore
+                    }
+                });
+            });
+            /*]]>*/
+        </script>
+    
+</head>
+
+
+<body class="signup-credco" id="credco-modern">
+    
+    
+    <nav id="credco-nav" class="navbar navbar-light bg-white shadow-sm">
+    <a class="navbar-brand" href="/?from=banner">
+        <img src="https://www.choicecreditscore.com/resources/site/images/logos/logo.png" alt="" />
+    </a>
+
+    
+
+    <div class="member-login">
+        <a href="/Membersite/?from=banner" class="text-muted"><i class="fa fa-user"></i> <span class="d-none d-sm-inline-block">Member</span> Sign-in</a>
+    </div>
+</nav>
+
+    <section class="container px-0 py-md-5">
+        <div id="credco-lightbox"></div>
+        <div class="row no-gutters shadow align-items-center">
+            <div class="col-md-7 pr-md-2 pl-md-3" id="tcpaCaptureContainer">
+                <form class="py-4" id="register" name="register" method="post" onsubmit="return nicEvents.safeFuncCall(nicEvents.EVENT_SIGNUP_NODROP_INIT, function() {return validateCredcoForm()})" action="/signup.do">
+                    <input type="hidden" id="catid" name="catid" value="1311413408" />
+                    <input type="hidden" id="randomid" name="randomid" value="HJAZzHIRCWOCk5BJlBRQtFpgt" />
+                    <input type="hidden" id="processSignup" name="processSignup" value="true" />
+                    <input type="hidden" name="enrollment" id="enrollment" value="true" />
+                    <input type="hidden" id="optionaladdress" name="optionaladdress" value="false" />
+                    <input type="hidden" id="prepopcustemail" name="prepopcustemail" value="" />
+                    <input type="hidden" name="brandid" id="brandid" value="44" />
+                    <input type="hidden" name="adid" id="adid" value="CCS1002S4095" />
+                    <input type="hidden" name="vTags" id="vTags" value="" />
+                    <input type="hidden" name="selectedOfferId" id="selectedOfferId" value="1119139941" />
+                    <input type="hidden" name="previouszip" value="" />
+                    <input type="hidden" name="usepassword" value="true" />
+                    <input type="hidden" name="credco" value="true" />
+                    <input type="hidden" name="selectedcustcity" value="" />
+                    <input type="hidden" name="custstate" value="" />
+                    <input type="hidden" name="formStep" id="formStep" value="1" />
+                    <input type="hidden" name="deviceType" id="deviceType" value="desktop" />
+                    <input type="hidden" name="acceptedCards" id="acceptedCards" value="visa,mastercard,americanexpress,discover" />
+                    <input type="hidden" name="skiptccheck" id="skiptccheck" value="true" />
+                    <input type="hidden" name="ioBlackBox" id="ioBlackBox" />
+                    <div class="signup-form" id="step1">
+                        
+    
+      
+  
+    <!-- This CSS file not needed for RT FbFlow's -->
+  <script type="text/javascript" src="/resources/t/js/tcpa-capture-plugins.js"></script>
+  
+  <script>
+    /*<![CDATA[*/
+        // Function to capture TCPA agreement by user
+        async function tcpaCapture() {
+            if (($("[name='tcpa_optin']").length || $('.form-group.optin').length || $('#easyFbFlow').length || $('#reg-checkbox').length || $('#eo2-tcpa').length) && !$("#tcpaWasCaptured").length) {
+            $("<input>").attr({type: "hidden", id: "tcpaWasCaptured"}).appendTo("body");
+
+            // START Params
+            var jluvr = 'd34a1c5d-394f-4574-b82b-27753ecea6ed';
+            var userIP = '103.93.33.6';
+            var userAgent = navigator.userAgent;
+            var platform = navigator.platform;
+            var browserCodeName = navigator.appCodeName;
+            var browserName = navigator.appName;
+            var date = new Date();
+            var dateString =  new Date().toLocaleDateString('en-CA');
+            var fullName = $('input[name="custfullname"]').val() !== undefined ? $('input[name="custfullname"]').val() : `${$('input[name="custfname"]').val() === undefined ? "Unknown First Name" : $('input[name="custfname"]').val()} ${$('input[name="custlname"]').val() === undefined ? "Unknown Last Name" : $('input[name="custlname"]').val()}`;
+            var exportUrl = 'grabzit://6080b8d9beb707fbd0cdd062@us-east-1/nic-tcpa-prod';
+            var GrabzITKey = 'ZTI0Yjg5OGRkODExNDFkZDlhMjZhYTU3ZTI4OWViMzM=';
+            var disclosureHTML;
+
+            console.log("tcpaCapture")
+            const screenToBeCaptured = document.getElementById("tcpaCaptureContainer");
+
+            // Screen capture helper functions
+            const dataURLtoFile = (dataurl, filename) => {
+                let arr = dataurl.split(","),
+                    mime = arr[0].match(/:(.*?);/)[1],
+                    bstr = window.atob(arr[1]),
+                    n = bstr.length,
+                    u8arr = new Uint8Array(n);
+
+                while (n--) {
+                    u8arr[n] = bstr.charCodeAt(n);
+                }
+
+                return new File([u8arr], filename, { type: mime });
+            }
+
+            const handleUpload = (image) => {
+                const newImageFile = dataURLtoFile(image, `${jluvr}.jpg`);
+                const imageData = new FormData();
+                imageData.append('files', newImageFile);
+                fetch('https://nic-tcpa-capture-prod.nationsinfocorp.com' + '/tcpa/v1/file/upload', {
+                    method: 'POST',
+                    headers: {
+                        Authorization: 'Bearer ' + btoa('tSeePyeh_V2')
+                    },
+                    body: imageData
+                })
+            };
+
+            const filter = (node) => {
+                const classArray = node.classList ? [...node.classList] : [];
+                const exclusionClasses = ["remove-me"];
+                return !exclusionClasses.some((classname) => classArray.includes(classname));
+            };
+
+            const imageDataUrl = await htmlToImage
+                .toJpeg(screenToBeCaptured, { backgroundColor: '#fff', quality: 0.55 })
+                .then(async function (dataUrl) {
+                    handleUpload(dataUrl)
+                    return dataUrl;
+                })
+                .catch(function (error) {
+                console.error("Could not convert to image", error);
+                console.log(error)
+            });
+
+            const canvasImg = await htmlToImage
+                .toCanvas(screenToBeCaptured, { backgroundColor: '#fff', quality: 0.55 })
+                .then(async function (dataUrl) {
+                    // handleUpload(dataUrl)
+                    return dataUrl;
+                })
+                .catch(function (error) {
+                console.error("Could not convert to image", error);
+                console.log(error)
+            });
+
+            // If else statements to get the disclosure HTML content
+            if ($('.form-group.optin').length) {
+                disclosureHTML =  `    <tr><td>Input Name</td><td>${$('.form-group.optin input[type=hidden]').attr('name')}</td></tr>` +
+                                `    <tr><td>Input Value</td><td>${$('.form-group.optin input[type=hidden]').attr('value')}</td></tr>` +
+                                `    ${$('.form-group.optin span[data-toggle=tooltip]').length ? `<tr><td>Tooltip Text</td><td>${$('.form-group.optin span[data-toggle=tooltip]').attr('data-original-title')}</td></tr>` : ''}` +
+                                `    <tr><td>Disclosure Text</td><td>${$('.form-group.optin span').html().split('<script')[0].replace('&nbsp;', ' ')}</td></tr>`
+            } else if ($('#easyFbFlow').length) {
+                disclosureHTML =  `    ${$('#easyFbFlow #reg-checkbox input[type=hidden]').length ? `<tr><td>Input Name</td><td>${$('#easyFbFlow input[type=hidden]').attr('name')}</td></tr>` : ''}` +
+                                `    ${$('#easyFbFlow #reg-checkbox input[type=hidden]').length ? `<tr><td>Input Value</td><td>${$('#easyFbFlow input[type=hidden]').attr('value')}</td></tr>` : ''}` +
+                                `    ${$('#easyFbFlow .disclosure-text span[data-toggle=tooltip]').length ? `<tr><td>Tooltip Text</td><td>${$('#easyFbFlow span[data-toggle=tooltip]').attr('data-original-title')}</td></tr>` : ''}` +
+                                `    <tr><td>Disclosure Text</td><td>${$('#easyFbFlow .disclosure-text').html().split('<script')[0].replace('&nbsp;', ' ')}</td></tr>`
+            } else if ($('#reg-checkbox').length && !$('#easyFbFlow').length) {
+                disclosureHTML = `    ${$('#reg-checkbox #tcpa').length ? `<tr><td>Input Name</td><td>${$('#reg-checkbox #tcpa').attr('name')}</td></tr>` : ''}` +
+                                `    ${$('#reg-checkbox label span').length ? `<tr><td>Checkbox Text</td><td>${$('#reg-checkbox label span').text()}</td></tr>` : ''}` +
+                                `    ${$('#reg-checkbox .disclosure-text').length ? `<tr><td>Disclosure Text</td><td>${$('#reg-checkbox .disclosure-text').text()}</td></tr>` : ''}`
+            } else if ($('#eo2-tcpa').length) {
+                disclosureHTML = `    <tr><td>Input Name</td><td>${$('#eo2-tcpa input[type=checkbox]').attr('name')}</td></tr>` +
+                                `    <tr><td>Checkbox Text</td><td>${$('#eo2-tcpa span:nth-child(2)').text()}</td></tr>` +
+                                `    <tr><td>Expanded Text</td><td>${$('#eo2-tcpa .eo2-tcpa-expanded').text()}</td></tr>`
+            }
+            // END Params
+
+            // Data Capture
+
+            const htmlDoc =
+                `<table>` +
+                `    <tr><td>User-Agent Header</td><td>${userAgent}</td></tr>` +
+                `    <tr><td>Browser CodeName</td><td>${browserCodeName}</td></tr>` +
+                `    <tr><td>Platform</td><td>${platform}</td></tr>` +
+                `    <tr><td>Browser Name</td><td>${browserName}</td></tr>` +
+                `    <tr><td>IP Address</td><td>${userIP}</td></tr>` +
+                `    <tr><td>Date and Time</td><td>${date}</td></tr>` +
+                `    <tr><td>JLUVR</td><td>${jluvr}</td></tr>` +
+                `    <tr><td>Full Name</td><td>${fullName}</td></tr>` +
+                     disclosureHTML +
+                     `<img width="500" height="500" src="${canvasImg.toDataURL()}">` +
+                `</table>` +
+                `<style>table{width:500px}table,td{border:1px solid #000;border-collapse:collapse;text-align:left;font-family:Arial,sans-serif;}td:nth-of-type(1){font-weight:bold;}td{padding:5px}</style>`
+
+                console.log('uploading pdf')
+                fetch('https://nic-tcpa-capture-prod.nationsinfocorp.com' + '/tcpa/v1/filecontent/upload', {
+                    method: 'POST',
+                    headers: {
+                        'Authorization': 'Bearer ' + btoa('tSeePyeh_V2'),
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        fileName: `${jluvr}_${new Date().toISOString()}`,
+                        content: htmlDoc
+                    })
+                })
+
+
+                console.log('tcpaCapture done')
+            return true;
+                }
+            //END Screen + Data capture
+        }
+    /*]]>*/
+  </script>
+
+    
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 pb-3">
+                <h1>Provide your information to locate your credit file.</h1>
+                <p class="sub-heading">Please take time to set up your account.</p>
+                
+                
+                <div>Step 1. Create Your Account </div>
+            </div>
+            
+            <div class="col-sm-6">
+                <div class="form-group input-fname">
+                    <input type="hidden" name="capturelocation" id="capturelocation" value="core" />
+                    <input type="hidden" name="leadformtype" id="leadformtype" value="reg page checkbox" />
+                    <label for="custfname" class="control-label mb-1">First Name</label>
+                    <input type="text" class="form-control" value="" onblur="nicEvents.subscribe(nicEvents.EVENT_SIGNUP_NODROP_INIT, function() {validateFirstName(); trackPIIStart();})" data-required="required" id="custfname" name="custfname" />
+                    <span class="d-none">
+                        <p class="text-error text-center mt-2"><img src="https://d2cnrbzfttnh6p.cloudfront.net/validation-exclamation.svg" alt="" class="w-25 mr-2" />
+                            <span class="align-middle focus-error"></span>
+                            
+                        </p>
+                    </span>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group input-lname">
+                    <label for="custlname" class="control-label mb-1">Last Name</label>
+                    <input type="text" class="form-control" value="" onblur="nicEvents.subscribe(nicEvents.EVENT_SIGNUP_NODROP_INIT, function() {validateLastName()})" data-required="required" id="custlname" name="custlname" />
+                    <span class="d-none">
+                        <p class="text-error text-center mt-2"><img src="https://d2cnrbzfttnh6p.cloudfront.net/validation-exclamation.svg" alt="" class="w-25 mr-2" />
+                            <span class="align-middle focus-error"></span>
+                            
+                        </p>
+                    </span>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group input-phone">
+                <label for="phone1" class="control-label mb-1">Phone</label>
+                <input type="tel" class="form-control" maxlength="10" value="" onblur="nicEvents.subscribe(nicEvents.EVENT_SIGNUP_NODROP_INIT, function() {validatePhone()})" data-required="required" id="phone" name="phone" />
+                    <span class="d-none">
+                        <p class="text-error text-center mt-2"><img src="https://d2cnrbzfttnh6p.cloudfront.net/validation-exclamation.svg" alt="" class="w-25 mr-2" />
+                            <span class="align-middle focus-error"></span>
+                            
+                        </p>
+                    </span>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group input-email">
+                    <label for="email" class="control-label mb-1">Email</label>
+                    <input type="email" class="form-control" value="" onblur="nicEvents.subscribe(nicEvents.EVENT_SIGNUP_NODROP_INIT, function() {validateEmail()})" data-required="required" id="custemail" name="custemail" />
+                    <span class="d-none">
+                        <p class="text-error text-center mt-2"><img src="https://d2cnrbzfttnh6p.cloudfront.net/validation-exclamation.svg" alt="" class="w-25 mr-2" />
+                            <span class="align-middle focus-error"></span>
+                            
+                        </p>
+                    </span>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group input-address">
+                    <label for="custaddress" class="control-label mb-1">Address</label>
+                    <input type="text" class="form-control" value="" onblur="nicEvents.subscribe(nicEvents.EVENT_SIGNUP_NODROP_INIT, function() {validateAddress()})" data-required="required" id="custaddress" name="custaddress" />
+                    <span class="d-none">
+                        <p class="text-error text-center mt-2"><img src="https://d2cnrbzfttnh6p.cloudfront.net/validation-exclamation.svg" alt="" class="w-25 mr-2" />
+                            <span class="align-middle focus-error"></span>
+                            
+                        </p>
+                    </span>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="form-group input-apartment">
+                    <label for="custaddress" class="control-label mb-1">Apartment</label>
+                    <input type="text" class="form-control" value="" onblur="nicEvents.subscribe(nicEvents.EVENT_SIGNUP_NODROP_INIT, function() {validateApartment()})" id="custaddress2" name="custaddress2" />
+                    <span class="d-none">
+                        <p class="text-error text-center mt-2"><img src="https://d2cnrbzfttnh6p.cloudfront.net/validation-exclamation.svg" alt="" class="w-25 mr-2" />
+                            <span class="align-middle focus-error"></span>
+                            
+                        </p>
+                    </span>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="form-group input-zip">
+                    <label for="custzip" class="control-label mb-1">Zip</label>
+                    <input type="tel" class="form-control" onkeyup="nicEvents.subscribe(nicEvents.EVENT_SIGNUP_NODROP_INIT, function() {checkCityZip();})" onblur="nicEvents.subscribe(nicEvents.EVENT_SIGNUP_NODROP_INIT, function() {validateZip(); trackPIIEnd();})" value="" data-required="required" id="custzip" name="custzip" />
+                    <span class="d-none">
+                        <p class="text-error text-center mt-2"><img src="https://d2cnrbzfttnh6p.cloudfront.net/validation-exclamation.svg" alt="" class="w-25 mr-2" />
+                            <span class="align-middle focus-error"></span>
+                            
+                        </p>
+                    </span>
+                </div>
+            </div>
+            <div class="col-sm-6 d-none" id="full-address-content">
+                <div class="form-group input-city">
+                    <label for="custcity" class="control-label mb-1">City</label>
+                    <div class="input-group">
+                        <select class="form-control custom-select" onblur="nicEvents.subscribe(nicEvents.EVENT_SIGNUP_NODROP_INIT, function() {validateCity()})" onchange="nicEvents.subscribe(nicEvents.EVENT_SIGNUP_NODROP_INIT, function() {validateCity()})" data-required="required" id="custcity" name="custcity">
+                            <option value="null">Please Select</option>
+                        </select>
+                        <div class="input-group-append">
+                            <label for="custcity" class="input-group-text bg-white px-3 border-left-0" id="stateText">CA</label>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <span class="d-none">
+                            <p class="text-error text-center mt-2"><img src="https://d2cnrbzfttnh6p.cloudfront.net/validation-exclamation.svg" alt="" class="w-25 mr-2" />
+                                <span class="align-middle focus-error"></span>
+                                
+                            </p>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="step1-button" class="col-12 step-buttons pt-3">
+                <div class="form-group">
+                        
+                        
+                          
+                        
+                        <button class="btn btn-primary btn-block disabled" disabled="true" role="button" aria-disabled="true" onclick="tcpaCapture()">CONTINUE</button>
+                </div>
+            </div>
+            
+            <div class="col-12">
+                
+                
+        
+        
+        <script>
+            // Check if sessionStorage.tcpaText is null
+            /*<![CDATA[*/
+            var faasTCPA = null;
+            var overrideTCPAFlag = 'false';
+            var stopLeads = false;
+            if (overrideTCPAFlag !== null && overrideTCPAFlag === 'true') {
+              //do nothing - show TCPA text on step1 signup page
+            } else {
+              if (faasTCPA !== null && faasTCPA === 'true') {
+                // If sessionStorage.tcpaText is null, hide the div
+                document.addEventListener("DOMContentLoaded", function() {
+                    var divToHide = document.getElementById("easyFbFlow");
+                    if (divToHide) {
+                        divToHide.style.display = "none";
+                        stopLeads = true;
+                    }
+                });
+              }
+              var tcpaText = sessionStorage.getItem("tcpaText");
+              if (tcpaText !== null) {
+                // If sessionStorage.tcpaText is null, hide the div
+                document.addEventListener("DOMContentLoaded", function() {
+                    var divToHide = document.getElementById("easyFbFlow");
+                    if (divToHide) {
+                        divToHide.style.display = "none";
+                        stopLeads = true;
+                    }
+                });
+              }
+            }
+            /*]]>*/
+        </script>
+        
+            <div id="easyFbFlow"></div>
+            <input type="hidden" name="nextFragmentSequence" class="seq optin" value="1" />
+            <script>
+                var easyFbArray = Object.keys([{'fbAdCampaignBean':{'asdForAcceptOffer':null,'asdForNotInterested':null,'fbAdBeans':[],'fbAdCampaignId':null,'name':null},'fbRouteBeans':null,'fbRuleBeans':null,'fbVariableRulesBeans':null,'flowFragmentFieldsBeans':[{'displaySequence':1,'formFieldBean':{'buttonActions':null,'buttonDisplayText':null,'buttonValue':null,'fieldID':null,'fieldSubType':null,'fieldType':null,'multiValues':null,'notEmpty':false,'notEmptyField':false,'placeholderText':null,'savableToSession':null,'sensitiveField':null,'validateField':null,'variableName':null},'id':1005471410,'imageUrl':null,'labelText':null,'optinBean':{'checkboxText':' ','disclosureText':'By clicking the button, I agree to the <a href=\"/terms-of-use.html\">Terms and Conditions<\/a> and consent to receive recurring automated and prerecorded informational and marketing messages at the number I provided above via call and text from and on behalf of CashCenter.ai. I understand that consent is not a condition to purchase and can call ${brandinfo.brandPhone} to purchase.\r\n\r\n<style>\r\n.disclosure-text.col-sm-12\r\n\r\n{ display: inline-block; padding-left: 20px; }\r\n<\/style>','lead_types':'sms_ccai,list_management,tel_ccai','optInID':2050305,'showFbLightbox':true,'uncheckedLeads':null,'variableName':'credit_optin'},'text':null}],'fragmentDisplaySequence':1,'fragmentFlowId':100537152,'fragmentName':'form-optins','headerContentText':'credco optin 1:1 consent','name':'fb optins'}]).map(function(e) {
+                    return [{'fbAdCampaignBean':{'asdForAcceptOffer':null,'asdForNotInterested':null,'fbAdBeans':[],'fbAdCampaignId':null,'name':null},'fbRouteBeans':null,'fbRuleBeans':null,'fbVariableRulesBeans':null,'flowFragmentFieldsBeans':[{'displaySequence':1,'formFieldBean':{'buttonActions':null,'buttonDisplayText':null,'buttonValue':null,'fieldID':null,'fieldSubType':null,'fieldType':null,'multiValues':null,'notEmpty':false,'notEmptyField':false,'placeholderText':null,'savableToSession':null,'sensitiveField':null,'validateField':null,'variableName':null},'id':1005471410,'imageUrl':null,'labelText':null,'optinBean':{'checkboxText':' ','disclosureText':'By clicking the button, I agree to the <a href=\"/terms-of-use.html\">Terms and Conditions<\/a> and consent to receive recurring automated and prerecorded informational and marketing messages at the number I provided above via call and text from and on behalf of CashCenter.ai. I understand that consent is not a condition to purchase and can call ${brandinfo.brandPhone} to purchase.\r\n\r\n<style>\r\n.disclosure-text.col-sm-12\r\n\r\n{ display: inline-block; padding-left: 20px; }\r\n<\/style>','lead_types':'sms_ccai,list_management,tel_ccai','optInID':2050305,'showFbLightbox':true,'uncheckedLeads':null,'variableName':'credit_optin'},'text':null}],'fragmentDisplaySequence':1,'fragmentFlowId':100537152,'fragmentName':'form-optins','headerContentText':'credco optin 1:1 consent','name':'fb optins'}][e]
+                });
+                var easyTcpa = 'true';
+            </script>
+        
+
+    
+            </div>
+            
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        nicEvents.subscribe(nicEvents.EVENT_SIGNUP_NODROP_INIT, function(){
+            checkCityZip();
+        });
+        
+            $('#phone').formatter({
+                'pattern': '({{999}}) {{999}}-{{9999}}'
+            });
+        
+
+        
+    </script>
+
+                    </div>
+                    <div class="signup-form d-none" id="step2">
+                        
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 pb-3">
+                <h1>Step 2. Secure Access</h1>
+                <a class="text-decoration-none" data-toggle="collapse" data-target="#collapsePrivacy" href="#collapsePrivacy" role="button" aria-expanded="false" aria-controls="collapsePrivacy">
+                    <div class="media py-2 d-flex align-items-center">
+                        <img src="https://d2cnrbzfttnh6p.cloudfront.net/img-security-shield.svg" alt="" class="w-25 mr-3" />
+                        <div class="media-body sub-heading">
+                            <p><span>You must provide correct information to authorize access to your credit file.</span> <img class="w-25 ml-1 info-img" src="https://d2cnrbzfttnh6p.cloudfront.net/info-circle.svg" /></p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-12 mb-5 info collapse" id="collapsePrivacy">
+                <div class="card border-0">
+                    <div class="card-body">
+                        <button type="button" class="close text-muted font-weight-light position-absolute" aria-label="Close" data-toggle="collapse" data-target="#collapsePrivacy">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <p class="info-title">Privacy and Security</p>
+                        <p class="mb-0">The security of your private information is very important to us. We encrypt all of our pages with 128-bit SSL encryption to ensure your data is always kept private and secure.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="form-group input-ssn">
+                    <label for="ssn1" class="control-label mb-1">Social Security Number</label>
+                    <div class="row no-gutters">
+                        <div class="col-4 pr-1">
+                            <input type="hidden" maxlength="3" value="" id="ssn1" name="ssn1" />
+                            <input type="tel" class="form-control ssn-1 text-center" maxlength="3" onblur="nicEvents.subscribe(nicEvents.EVENT_SIGNUP_NODROP_INIT, function() {validateSsn1();})" onkeyup="nicEvents.subscribe(nicEvents.EVENT_SIGNUP_NODROP_INIT, function() {checkfirstssn();})" value="" data-required="required" />
+                        </div>
+                        <div class="col-4 px-1">
+                            <input type="hidden" maxlength="2" value="" id="ssn2" name="ssn2" />
+                            <input type="tel" class="form-control ssn-2 text-center" maxlength="2" onblur="nicEvents.subscribe(nicEvents.EVENT_SIGNUP_NODROP_INIT, function() {validateSsn2();})" onkeyup="nicEvents.subscribe(nicEvents.EVENT_SIGNUP_NODROP_INIT, function() {checksecondssn();})" value="" data-required="required" />
+                        </div>
+                        <div class="col-4 pl-1">
+                            <input type="tel" class="form-control text-center" id="ssn-reset" maxlength="4" onblur="nicEvents.subscribe(nicEvents.EVENT_SIGNUP_NODROP_INIT, function() {validateSsn();})" value="" data-required="required" name="ssn3" />
+                        </div>
+                        <div class="col-12">
+                            <span class="d-none">
+                                <p class="text-error text-center mt-2"><img src="https://d2cnrbzfttnh6p.cloudfront.net/validation-exclamation.svg" alt="" class="w-25 mr-2" />
+                                    <span class="align-middle focus-error"></span>
+                                    
+                                    
+                                </p>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="form-group input-dob">
+                    <label for="custlname" class="control-label mb-1">Date of Birth</label>
+                    <div class="row no-gutters">
+                        <div class="col-4 pr-1">
+                            <input type="tel" placeholder="MM" maxlength="2" class="form-control text-center" onblur="nicEvents.subscribe(nicEvents.EVENT_SIGNUP_NODROP_INIT, function() {validateMonth();})" onkeyup="nicEvents.subscribe(nicEvents.EVENT_SIGNUP_NODROP_INIT, function() {checkMonth();})" data-required="required" id="dobmonth" name="dobmonth" value="" />
+                        </div>
+                        <div class="col-4 px-1">
+                            <input type="tel" placeholder="DD" maxlength="2" class="form-control text-center" onblur="nicEvents.subscribe(nicEvents.EVENT_SIGNUP_NODROP_INIT, function() {validateDay();})" onkeyup="nicEvents.subscribe(nicEvents.EVENT_SIGNUP_NODROP_INIT, function() {checkDay();})" data-required="required" id="dobday" name="dobday" value="" />
+                        </div>
+                        <div class="col-4 pl-1">
+                            <input type="tel" placeholder="YYYY" maxlength="4" class="form-control text-center" onblur="nicEvents.subscribe(nicEvents.EVENT_SIGNUP_NODROP_INIT, function() {validateDob();})" data-required="required" id="dobyear" name="dobyear" value="" />
+                        </div>
+                        <div class="col-12">
+                            <span class="d-none">
+                                <p class="text-error text-center mt-2"><img src="https://d2cnrbzfttnh6p.cloudfront.net/validation-exclamation.svg" alt="" class="w-25 mr-2" />
+                                    <span class="align-middle focus-error"></span>
+                                    
+                                    
+                                    
+                                </p>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 pt-4">
+                <h1>Setup Your Password</h1>
+                
+            </div>
+            <div class="col-12 mt-2 mb-3 info pw-info collapse" style="display:none;" id="collapsePWReq">
+                <div class="card border-0">
+                    <div class="card-body">
+                        <p class="info-title">Password Requirements</p>
+                        <div class="media pw-char has-error mb-2">
+                            <img src="https://d2cnrbzfttnh6p.cloudfront.net/validation-error.svg" alt="" class="w-25 mr-2" />
+                            <div class="media-body">
+                                8 characters
+                            </div>
+                        </div>
+                        <div class="media pw-num has-error">
+                            <img src="https://d2cnrbzfttnh6p.cloudfront.net/validation-error.svg" alt="" class="w-25 mr-2" />
+                            <div class="media-body">
+                                At least one number
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="form-group input-password">
+                    <label for="password" class="control-label mb-1">Password</label>
+                    <input type="password" class="form-control" onfocus="nicEvents.subscribe(nicEvents.EVENT_SIGNUP_NODROP_INIT, function() {passwordRequirements()})" onkeyup="nicEvents.subscribe(nicEvents.EVENT_SIGNUP_NODROP_INIT, function() {passwordRequirements()}) " onblur="nicEvents.subscribe(nicEvents.EVENT_SIGNUP_NODROP_INIT, function() {validatePassword()})" value="" data-required="required" id="password" name="password" />
+                    <span class="d-none">
+                        <p class="text-error text-center mt-2"><img src="https://d2cnrbzfttnh6p.cloudfront.net/validation-exclamation.svg" alt="" class="w-25 mr-2" />
+                            <span class="align-middle focus-error"></span>
+                            
+                            
+                        </p>
+                    </span>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="form-group input-confirmpw">
+                    <label for="password" class="control-label mb-1">Confirm Password</label>
+                    <input type="password" class="form-control" onkeyup="nicEvents.subscribe(nicEvents.EVENT_SIGNUP_NODROP_INIT, function() {validateConfirmPassword()})" onblur="nicEvents.subscribe(nicEvents.EVENT_SIGNUP_NODROP_INIT, function() {validateConfirmPassword()})" value="" data-required="required" id="repeatpassword" name="repeatpassword" />
+                    <span class="d-none">
+                        <p class="text-error text-center mt-2"><img src="https://d2cnrbzfttnh6p.cloudfront.net/validation-exclamation.svg" alt="" class="w-25 mr-2" />
+                            <span class="align-middle focus-error"></span>
+                            
+                            
+                        </p>
+                    </span>
+                </div>
+            </div>
+
+            <div id="step2-button" class="col-12 step-buttons pt-3">
+              <div class="form-group">
+                  
+                  
+                    
+                  
+                  <button class="btn btn-primary btn-block disabled" role="button" disabled="true" aria-disabled="true">CONTINUE</button>
+              </div>
+            </div>
+        </div>
+    </div>
+    
+    <script type="text/javascript">
+        $('.signup-credco .input-password .form-control').on('focus blur', function() {
+            $('.pw-info').collapse('toggle');
+        });
+        
+        $('.signup-credco #collapsePrivacy .close').on('click', function() {
+            $('#collapsePrivacy').collapse('hide');
+        });
+    </script>
+
+                    </div>
+                    <div class="signup-form d-none" id="step3">
+                        
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 pb-3">
+              
+                
+                
+              
+              
+            </div>
+            <input id="processorType" name="processorType" type="hidden" value="nmi" />
+            
+            
+            
+                
+                <div class="col-12">
+                    <div class="form-group input-ccnumber">
+                        <div>
+                            <span style="position: absolute;margin-top: -10px;width: 75%;display: flex;justify-content: center;align-items: center;max-width: 200px;right: 15px;">
+                                <img id="cc-img-visa" src="https://d15lgjrx5j4lkm.cloudfront.net/networks/cc-logo-visa.svg" alt="Visa Card Image" style="width: 25%;display: none;" />
+                                <img id="cc-img-mastercard" src="https://d15lgjrx5j4lkm.cloudfront.net/networks/cc-logo-master-card.svg" alt="Mastercard Card Image" style="width: 25%;display: none;" />
+                                <img id="cc-img-americanexpress" src="https://d15lgjrx5j4lkm.cloudfront.net/networks/cc-logo-amex.svg" alt="Americanexpress Card Image" style="width: 20%;display: none;" />
+                                <img id="cc-img-discover" src="https://d15lgjrx5j4lkm.cloudfront.net/networks/cc-logo-discover.svg" alt="Discover Card Image" style="width: 30%;display: none;" />
+                            </span>
+                            <script>
+                                /*<![CDATA[*/
+                                var ccType = 'visa,mastercard,americanexpress,discover';
+                                var ccIcons = 'true';
+                                var eachCCType = ccType.split(',');
+
+                                for (var i = 0; i < eachCCType.length; i++) {
+                                    document.getElementById("cc-img-" + eachCCType[i]).style.display = "inline";
+                                }
+                                //]]>
+                            </script>
+                            <style>
+                                .dl-hide {
+                                    display: none !important;
+                                }
+                            </style>
+                          </div>
+                        <label class="control-label" for="custfname">Card Number</label>
+                        <input type="tel" class="form-control" value="" onblur="nicEvents.subscribe(nicEvents.EVENT_SIGNUP_NODROP_INIT, function() {validateCCNumber();})" data-required="required" id="ccnumber" name="ccnumber" />
+                        <span class="d-none">
+                        <p class="text-error text-center mt-2"><img src="https://d2cnrbzfttnh6p.cloudfront.net/validation-exclamation.svg" alt="" class="w-25 mr-2" />
+                            <span class="align-middle focus-error"></span>
+                            
+                        </p>
+                    </span>
+                    </div>
+                </div>
+                <div class="col-12 mt-2 mb-3 info collapse" id="collapseCvv">
+                    <div class="card border-0">
+                        <div class="card-body">
+                            <button type="button" class="close text-muted font-weight-light position-absolute" aria-label="Close" data-toggle="collapse" data-target="#collapseCvv">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            <p class="info-title">What is CVV?</p>
+                            <p>This is the 3-digit number on the back of your card (4-digits for American Express), used to protect your account against fraud.</p>
+                            <a href="/card-verification.html" target="_blank" class="text-primary">Click if you need more details.</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-8">
+                    <div class="form-group input-ccexp">
+                        <label class="control-label" for="expDate">Expiration Date</label>
+                        <div class="row no-gutters">
+                            <div class="col-6 pr-1">
+                                <input type="tel" placeholder="MM" class="form-control text-center" maxlength="2" value="" onblur="nicEvents.subscribe(nicEvents.EVENT_SIGNUP_NODROP_INIT, function() {validateCCMonth();})" onkeyup="nicEvents.subscribe(nicEvents.EVENT_SIGNUP_NODROP_INIT, function() {checkCCMonth();})" data-required="required" id="ccmonth" name="ccmonth" />
+                            </div>
+                            <div class="col-6 pl-1">
+                                <input type="tel" placeholder="YYYY" class="form-control text-center" maxlength="4" value="" onblur="nicEvents.subscribe(nicEvents.EVENT_SIGNUP_NODROP_INIT, function() {validateCCYear(); trackYYMM();})" data-required="required" id="ccyear" name="ccyear" />
+                            </div>
+                            
+                            <div class="col-12">
+                            <span class="d-none">
+                                <p class="text-error text-center mt-2"><img src="https://d2cnrbzfttnh6p.cloudfront.net/validation-exclamation.svg" alt="" class="w-25 mr-2" />
+                                    <span class="align-middle focus-error"></span>
+                                    
+                                    
+                                </p>
+                            </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="form-group input-cvv">
+                        <label class="control-label cvv-input" for="cccvv2">
+                            <a class="text-reset text-decoration-none" href="#collapseCvv" data-toggle="collapse" data-target="#collapseCvv" aria-expanded="false" aria-controls="collapseCvv">
+                                CVV
+                                <img class="w-25 ml-1 info-img" src="https://d2cnrbzfttnh6p.cloudfront.net/info-circle.svg" />
+                            </a>
+                        </label>
+                        <input type="tel" class="form-control text-center" value="" onblur="nicEvents.subscribe(nicEvents.EVENT_SIGNUP_NODROP_INIT, function() {validateCVV(); trackBillingCVV();})" data-required="required" id="cccvv2" name="cccvv2" />
+                        <span class="d-none">
+                        <p class="text-error text-center mt-2"><img src="https://d2cnrbzfttnh6p.cloudfront.net/validation-exclamation.svg" alt="" class="w-25 mr-2" />
+                            <span class="align-middle focus-error"></span>
+                            
+                        </p>
+                    </span>
+                    </div>
+                </div>
+                
+            
+
+
+
+            
+              <div id="terms-mission-control" class="mission-control-content">
+                  
+                  <div class="col-12" id="dynamic-light-false">
+                      <style>
+                          .hidden {
+                              display: none;
+                          }
+                      </style>
+                      <style>
+                        .card.terms-simple {
+                            margin-bottom: 0 !important;
+                        }
+                        .card.terms-simple .card-body.border-left.border-primary {
+                            background: transparent !important;
+                            border: none !important;
+                            padding: 0;
+                        }
+                    </style>
+                      <div class="card border-0 rounded-0 terms-section my-3 terms-simple">
+                          <div class="card-body border-left border-primary">
+                              <div class="terms mission-control-content"><p><strong>Offer Details</strong></p><p>By clicking the button below, you agree to the <a href='/terms-of-use.html' target='_blank'>Terms of Use</a> to enroll in a 7-day trial for a one-time processing fee of $1.00. After the trial ends on May 21, 2025, the nonrefundable membership automatically continues for $39.94  per month until you cancel. You may cancel by calling (800) 305-9580 or by <a href='/contact-us.html' target='_blank'>email</a>. If you cancel your account during the trial, there will be NO FURTHER CHARGES.</p></div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-12 step-buttons pt-3">
+                      <div class="form-group">
+                          <button id="buttonStep2" type="submit" class="btn btn-primary btn-block mission-control-content">
+                      <span class="mc-button">
+                          <small id="mc-button-txt-top" class="d-block">I Agree & Accept</small>
+                          <span id="mc-button-txt-bottom" class="d-block">
+                              Get My Score!
+                          </span>
+                          
+                      </span>
+                          </button>
+                      </div>
+                  </div>
+              </div>
+            
+
+            
+
+        </div>
+    </div>
+    
+    <script type="text/javascript">
+        
+            $('#ccnumber').formatter({
+                'pattern': '{{9999}} {{9999}} {{9999}} {{9999}}'
+            });
+        
+        
+        
+        
+        $('.signup-credco #collapseCvv .close').on('click', function() {
+            $('#collapseCvv').collapse('hide');
+        });
+    </script>
+
+                    </div>
+                    <div class="container-fluid pt-1 pb-3">
+                        
+
+                        
+        <div class="seal-content  row  hidden-xs  hidden-sm ">
+            <div class="col-sm-12 seal-items   ">
+                <div class="seals text-center">
+                    
+                    
+
+                    <div>
+                        
+                            
+                                
+                                    
+        <a onclick="NewWindowTarget(this.href, 'SealVerfication', '593', '460'); return false;" class="seal-bg seal-godaddy" title="SSL site seal - click to verify" href="https://seal.godaddy.com/verifySeal?sealID=1X0Q9RR0PnsyvT1bWXsqVnvV7LESXWnv0H67SMMfVVDoeDYHJR9n46gsseFD" style="background-image: url(https://www.choicecreditscore.com/resources/images/seals/godaddy.png);"></a>
+    
+                                
+
+                            
+                        
+                        
+                            
+                                
+                                    
+        
+            
+                <a target="_blank" class="seal-bg seal-bbb" href="https://www.bbb.org/" style="background-image: url(https://www.choicecreditscore.com/resources/images/seals/122x46_bbb_seal.gif);"></a>
+                
+            
+
+            
+        
+    
+                                
+
+                            
+                        
+                        
+                            
+                                
+                                    
+        
+    
+                                
+
+                            
+                        
+                        
+                    </div>
+
+                </div>
+                
+            </div>
+        </div>
+
+        <script type="text/javascript">
+            /*<![CDATA[*/
+                nicEvents.subscribe(nicEvents.EVENT_SEALS_INIT, function() { Seals.init(); });
+            /*]]>*/
+        </script>
+    
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-5 pl-md-2 align-self-stretch d-md-flex">
+                <div class="show-benefit-step1 align-self-stretch d-md-flex">
+                    <div class="benefit benefit-step1 p-5 d-flex flex-column justify-content-center">
+    <div class="text-center">
+        <img src="https://d2cnrbzfttnh6p.cloudfront.net/img-score-and-more.svg" alt="" class="w-75 mb-4" />
+ </div>
+<h2 class="pb-3">Get your credit score and get protected too.</h2>
+<ul class="list-unstyled mb-md-0">
+        <li class="pb-3 media">
+            <img src="https://d2cnrbzfttnh6p.cloudfront.net/list-checkmark.svg" alt="" class="mr-3" />
+            Credit Report and Score
+        </li>
+        <li class="pb-3 media">
+            <img src="https://d2cnrbzfttnh6p.cloudfront.net/list-checkmark.svg" alt="" class="mr-3" />Score Refreshed Every 30 Days On Sign In
+        </li>
+        <li class="pb-3 media">
+            <img src="https://d2cnrbzfttnh6p.cloudfront.net/list-checkmark.svg" alt="" class="mr-3" />Credit Monitoring and Alerts
+        </li>
+        <li class="pb-3 media">
+            <img src="https://d2cnrbzfttnh6p.cloudfront.net/list-checkmark.svg" alt="" class="mr-3" />Credit Cards and Loans Matched for You
+        </li>
+ </ul>
+</div>
+                </div>
+                <div class="show-benefit-step2 align-self-stretch d-none">
+                    <div class="benefit benefit-step2 p-5 d-flex flex-column justify-content-center">
+<div class="text-center">
+	<img src="https://d2cnrbzfttnh6p.cloudfront.net/img-check-score.png" alt="" class="w-75 mb-4" />
+</div>
+<h2 class="pb-3 text-center">Will This Affect My Credit?</h2>
+<p class="text-center">Absolutely not! Checking your score on <strong>ChoiceCreditScore.com</strong> is a soft inquiry, which will never affect your credit.</p>
+</div>
+                </div>
+                <div class="show-benefit-step3 align-self-stretch d-none">
+                    <div class="benefit benefit-step3 benefit-step1-2 p-5 d-flex flex-column justify-content-center">
+<div class="text-center">
+        <img src="https://d2cnrbzfttnh6p.cloudfront.net/img-score-and-more.svg" alt="" class="w-75 mb-4" />
+ </div>
+<h2 class="pb-3">Get your credit score and get protected too.</h2>
+<ul class="list-unstyled mb-md-0">
+        <li class="pb-3 media">
+            <img src="https://d2cnrbzfttnh6p.cloudfront.net/list-checkmark.svg" alt="" class="mr-3" />
+            Credit Report and Score
+        </li>
+        <li class="pb-3 media">
+            <img src="https://d2cnrbzfttnh6p.cloudfront.net/list-checkmark.svg" alt="" class="mr-3" />Score Refreshed Every 30 Days On Sign In
+        </li>
+        <li class="pb-3 media">
+            <img src="https://d2cnrbzfttnh6p.cloudfront.net/list-checkmark.svg" alt="" class="mr-3" />Credit Monitoring and Alerts
+        </li>
+        <li class="pb-3 media">
+            <img src="https://d2cnrbzfttnh6p.cloudfront.net/list-checkmark.svg" alt="" class="mr-3" />Credit Cards and Loans Matched for You
+        </li>
+ </ul>
+</div>
+                </div>
+            </div>
+        </div>
+        <script src="/branding/t/js/config.js"></script>
+        <script src="/branding/t/js/loader.js"></script>
+    </section>
+
+    
+    <footer class="credco-footer pb-3">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="text-center">
+                    <img src="https://d2cnrbzfttnh6p.cloudfront.net/img-service-seal.svg" alt="" class="w-50 h-auto" />
+                </div>
+                <ul class="list-unstyled pt-2">
+                    <li class="pb-2 pl-2 d-block d-md-inline-block"><a class="text-white" title="Terms of Use" href="/terms-of-use.html">Terms of Use</a></li>
+                    <li class="pb-2 pl-2 d-block d-md-inline-block"><a class="text-white" title="Do Not Sell" href="/ccpa.html">Do Not Sell My Info</a></li>
+                    <li class="pb-2 pl-2 d-block d-md-inline-block"><a class="text-white" title="Privacy Policy" href="/privacy-policy.html">Privacy Policy</a></li>
+                    <li class="pb-2 pl-2 d-block d-md-inline-block"><a class="text-white" title="Contact Us" href="/contact-us.html">Contact Us</a></li>
+                </ul>
+                <p class="text-white pl-2">Nations Info Corp &#169; 2025 ChoiceCreditScore</p>
+            </div>
+        </div>
+    </div>
+
+    
+    
+    
+    
+
+    <script>
+        $(window).on('load', function () {
+            var jLoggingURL = "/jgenpxvat.gif";
+            $.ajax({
+                type: 'GET',
+                url: jLoggingURL,
+                crossDomain:true,
+                xhrFields: { withCredentials: true },
+                data: {
+                    cookie_adid: 'CCS1002S4095',
+                    click_adid: geturlparam("adid"),
+                    brandId: "44",
+                    afid: geturlparam("afid") === "" ? null : geturlparam("afid"),
+                    xid: geturlparam("XID"),
+                    dc: '{44=25W20,S4038A}',
+                    utm_source: geturlparam("utm_source"),
+                    utm_medium: geturlparam("utm_medium"),
+                    utm_term: geturlparam("utm_term"),
+                    utm_content: geturlparam("utm_content"),
+                    utm_id: geturlparam("utm_id"),
+                    utm_campaign: geturlparam("utm_campaign"),
+                    gclid: geturlparam("gclid"),
+                    deviceType: 'desktop'
+                }
+            }).done(function (data) {
+                $.post('/update-ranjs.ajax');
+            });
+        });
+        //Lazy Load Function
+        const observer = lozad();  // lazy loads elements with default selector as '.lozad'
+        observer.observe();
+    </script>
+
+    <script>
+            
+            function trackWaterfall(type) {
+
+                trackGA4(type,
+                'CCS1002S4095',
+                4401,
+                '',
+                '',
+                'CCS1002S4095',
+                'd34a1c5d-394f-4574-b82b-27753ecea6ed',
+                100,
+                'desktop');
+
+                userActionTracking(type,
+                'CCS1002S4095',
+                'd34a1c5d-394f-4574-b82b-27753ecea6ed',
+                '',
+                '',
+                'CCS1002S4095');
+
+            }
+            trackWaterfall('credco_registration_step1');
+            
+            
+
+            function trackUsage(type) {
+                trackGA4(type,
+                    'CCS1002S4095',
+                    4401,
+                    '',
+                    '',
+                    'CCS1002S4095',
+                    'd34a1c5d-394f-4574-b82b-27753ecea6ed',
+                    100,
+                    'desktop');
+            }
+    </script>
+
+    
+        <script>
+            $(window).on('load', function () {
+                if (($('#easyFbFlow').length > 0)) {
+                    loadNextFragment('CCS1002S4095', "/fbFlow.ajax", 'nextSequence='+1, 1,"easyOptinFlow");
+                }
+            });
+        </script>
+    
+
+    
+    
+    
+            
+        
+    
+        
+        
+
+    
+    
+    
+    
+
+    <div>
+
+    
+
+</div>
+
+    
+
+
+</footer>
+    
+    <div>
+    <script>
+
+        var submitcount = 0;
+
+
+        /*<![CDATA[*/
+        $('.helper').tooltip();
+
+        //Trigger Step 2, Terms and RHS Terms.
+        $('.formstep').on('show.bs.collapse', function () {
+            var actives = $(this).find('.collapse.in'),
+                hasData;
+        });
+
+        $('#phone').formatter({'pattern': '({{999}}) {{999}}-{{9999}}'});
+        $('#phone1').formatter({'pattern': '{{999}}'});
+        $('#phone2').formatter({'pattern': '{{999}}'});
+        $('#phone3').formatter({'pattern': '{{9999}}'});
+
+        //Place Holders Mobile
+        if ($(window).width() < 767) {
+            $('input[name$="ccnumber"]').on('blur',checkCvv2LengthByCCNumber);
+        } else {
+        }
+        if ($(window).width() > 767) {
+            $(':input').removeAttr("placeholder");
+        }
+        /*]]>*/
+    </script>
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+        
+            <script type="text/javascript">
+/*<![CDATA[*/
+var VerifiAuthenticationVariables = {
+
+    /*
+     * Set this to TRUE to see debug information
+     */
+    debug: false,
+
+    /*
+     * Your account alias. This is provided to you by Verifi, Inc.
+     */
+    your_alias: '51d59241e38b46189e5e6d8845de8b54',
+
+    /*
+     * Version of API. This should likely not be altered.
+     */
+    api_version: '1.0',
+
+    /*
+     * The API host (see documentation). This URL should be changed with caution.
+     */
+    api_host: 'https://api.verifi.com',
+
+    /*
+     * The folder where you placed the Verifi Callback HTML file that you downloaded from the Verifi website.
+     * A fully qualified path must be used (as in, with "https://" and your domain)
+     */
+    close_location: 'https:///verifi_close.html',
+
+    /*
+     * This may be changed during run time to be the CC NUMBER value passed to the API.
+     * This value is used if the expected form element is not found.
+     * Change it in your script using the syntax: VerifiAuthenticationVariables.cc_number = 'new value';
+     * You may also change it here in this file.
+     */
+    cc_number: null,
+
+    /*
+     * This may be changed during run time to be the EXPIRATION MONTH value passed to the API.
+     * This value is used if the expected form element is not found.
+     * Change it in your script using the syntax: VerifiAuthenticationVariables.cc_expiration_month = 'new value';
+     * You may also change it here in this file.
+     */
+    cc_expiration_month: null,
+
+    /*
+     * This may be changed during run time to be the EXPIRATION YEAR value passed to the API.
+     * This value is used if the expected form element is not found.
+     * Change it in your script using the syntax: VerifiAuthenticationVariables.cc_expiration_year = 'new value';
+     * You may also change it here in this file.
+     */
+    cc_expiration_year: null,
+
+    /*
+     * This may be changed during run time to be the CURRENCY value passed to the API.
+     * This value is used if the expected form element is not found.
+     * Change it in your script using the syntax: VerifiAuthenticationVariables.currency = 'new value';
+     * You may also change it here in this file.
+     */
+    currency: 'USD',
+
+    /*
+     * This may be changed during run time to be the CC AMOUNT value passed to the API.
+     * This value is used if the expected form element is not found.
+     * Change it in your script using the syntax: VerifiAuthenticationVariables.cc_amount = 'new value';
+     * You may also change it here in this file.
+     */
+    cc_amount: null,
+
+    /*
+     * This may be changed during run time to be the PRODUCT GROUP value passed to the API.
+     * This value is used if the expected form element is not found.
+     * Change it in your script using the syntax: VerifiAuthenticationVariables.cc_product_group = 'new value';
+     * You may also change it here in this file.
+     */
+    cc_product_group: null,
+
+    /*
+     * This may be changed during run time to be the ORDER ID value passed to the API.
+     * This value is used if the expected form element is not found.
+     * Change it in your script using the syntax: VerifiAuthenticationVariables.order_id = 'new value';
+     * You may also change it here in this file.
+     */
+    order_id: null,
+
+    /*
+     * This is an optional field. If your checkout page has multiple forms on it, it is highly advised you use this
+     * configuration. Assign the ID of the field that should trigger the Authentication process. Without this, it is
+     * possible that the wrong form (such as a search form or a mailing list form) triggers the authentication script.
+     */
+    form_id: null,
+
+    /*
+     * Provide a custom veil color here. The veil will appear slightly transparent. Use standard CSS values such as
+     * '#000033', '#BBB', 'green', etc.
+     */
+    veil_color: null,
+
+    /*
+     * Custom submitting text here. This text will display after authentication completes successfully.
+     */
+    submitting_text: null,
+
+    /*
+     * Fill in this function with your own logic that is executed after the authentication process is complete.
+     * This code is always executed after the authentication window is minimized. If this method returns false,
+     * the default behavior (usually submitting the form) is skipped. The status variable can have one of 7 values:
+     *	- "Y" means success.
+     *	- "A" means attempts.
+     *	- "U" means unavailable.
+     *	- "N" means fail.
+     *	- "E" means error during authentication (Error result returned from Cardinal Lookup or Authenticate messages.)
+     *	- "ET" means timeout error
+     *	- "EC" means consumer cancelled (Consumer clicked Close button)
+     *	- Otherwise it is the boolean value: false (skipped).
+     */
+    callback: function(status) {
+        /*
+         * [YOUR JAVASCRIPT CODE HERE]
+         */
+        payerAuthenticator.trackResponse(status);
+
+        /*
+         * return true to submit the form as normal
+         */
+        return false;
+    },
+
+    /*
+     * Set this to TRUE to manually trigger authentication. This will cause some checks to be bypassed so use with caution.
+     * To trigger manual authentication, call either:
+     *
+     * 		VerifiAuthentication.manualStart(onSubmitEvent)
+     *						OR
+     * 		VerifiAuthentication.manualStart(form)
+     *
+     * When this process finishes, it will call the callback function if it is set, OR it will simply just submit the form.
+     * If used inside an "onsubmit", you should use the syntax:
+     *
+     * 		onsubmit="return VerifiAuthentication.manualStart(event);"
+     *
+     * Otherwise, the form will submit without letting the authentication process finish
+     */
+    disable_automatic_scan: true
+
+};
+/*]]>*/
+</script>
+        
+        <script src="/resources/t/js/verifi_authentication.js"></script>
+        <script>
+            /*<![CDATA[*/
+            var scheme = 'https';
+            var serverName = 'www.choicecreditscore.com';
+            var contextUrl = '/';
+            var mid = '20016005921';
+            var cascadeYSAMLight = '';
+
+            var payerAuthenticator;
+            var providers = {};
+            providers["visa"] = 'none';
+            providers["mastercard"] = 'none';
+
+            var authenticator = {};
+            $.each(providers, function (key) {
+                authenticator[key] = PayerAuthenticatorFactory.getAuthenticator(providers[key]);
+
+                authenticator[key].authAmount = 40.94;
+                authenticator[key].gracePeriod = '15';
+                if (authenticator[key] instanceof QualpayAuthenticator) {
+                    authenticator[key].contextUrl = scheme + "://" + serverName + contextUrl;
+                    authenticator[key].enrollmentTimeout = '5';
+                } else if (authenticator[key] instanceof VerifiAuthenticator) {
+                    authenticator[key].contextUrl = scheme + "://" + serverName + "/verifi_close.html";
+                    authenticator[key].product_group = '44';
+                }
+            });
+
+            try {
+                $("#buttonStep1, #buttonStep2, #register .signup-form button").on('click',function (event) {
+                    var isButtonStep2 = $(this).is("#buttonStep2");
+                    if (! $('#stripeToken').length && $('#processorType').val() !== 'adyen' && $('#processorType').val() !== 'braintree') {
+                        var ccNumber = $("input[name=ccnumber]").val().replace(/\s+|-/g, "");
+                        var cardType = $.inArray($("select[name=cctype]").val(), ["visa", "mastercard"]) === -1 ? $.payment.cardType(ccNumber) : $("select[name=cctype]").val();
+
+                        if (authenticator[cardType] !== undefined) {
+                            event.preventDefault();
+                            payerAuthenticator = authenticator[cardType];
+                            payerAuthenticator.cardType = cardType;
+                            if(cascadeYSAMLight != null && cascadeYSAMLight !== undefined && cascadeYSAMLight != ''){
+                                CheckCascadeYSAMLight(ccNumber,cardType);
+                            }else{
+                                payerAuthenticator.processEnrollmentMPI();
+                            }
+                            return false;
+                        }
+                    }
+                    if ($('#processorType').val() === 'adyen' && isButtonStep2) {
+                        displayOverlaySpinner($("#buttonStep2"));
+                    }
+                });
+            } catch (ex) {
+                console.log("Attaching 3DS to button error", ex);
+            }
+            /*]]>*/
+        </script>
+    
+
+
+    
+    <style>
+        #wrap3ds  {
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+        }
+    </style>
+
+    
+
+    
+    
+	
+	
+            
+                <script async src="https://www.googletagmanager.com/gtag/js?id=AW-956842556"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-956842556', { 'send_page_view': false });
+</script>
+            
+            
+        
+	<script>
+		var ROAS = {};
+		var leadSubmissionTypes = new Array();
+		ROAS.fields = {};
+		ROAS.pixelForStep1 = function() {
+			
+            
+            
+        
+		}
+		ROAS.pixelForSSI = function () {
+			
+            
+            
+        
+		}
+		ROAS.pixelForConfirmationCreditClick = function () {
+			
+            
+            
+        
+		}
+		ROAS.pixelForSignupSuccess = function () {
+			
+            
+            
+        
+		}
+		
+			
+        		leadSubmissionTypes = ['credit_repair','internal_sms'];
+				
+				ROAS['pixelForLeadType'+'credit_repair'] = function () {
+						
+            
+            
+        
+					}
+				
+				
+				ROAS['pixelForLeadType'+'internal_sms'] = function () {
+						
+            
+            
+        
+					}
+				
+			
+		
+	</script>
+
+    
+</div>
+    <script type="text/javascript">
+        $.each(providers, function(key) {
+            authenticator[key].validateFunc =  function(){ return validateCredcoForm() }
+        });
+        
+        //<![CDATA[
+        // Hides the first 2 SSN input fields
+        const hiddenInput = ['#ssn1', '#ssn2'];
+        const visibleInput = ['.ssn-1', '.ssn-2'];
+        for (let k = 0; k < visibleInput.length; k++) {
+            const hiddenSSN = hiddenInput[k];
+            const visibleSSN = visibleInput[k];
+            (function(ssn, hidSSN) {
+                const j = k;
+                $(ssn).blur(function() {
+                    if (j === 0 && $(this).attr('maxlength') == $(this).val().length) {
+                        $(this).val('\u2022 \u2022 \u2022');
+                    } else if (j === 1 && $(this).attr('maxlength') == $(this).val().length) {
+                        $(this).val('\u2022 \u2022');
+                    }
+                });
+                $(ssn).focus(function() {
+                    if ($(this).val() === '\u2022 \u2022 \u2022') {
+                        $(this).val($(hidSSN).val());
+                    } else if ($(this).val() === '\u2022 \u2022') {
+                        $(this).val($(hidSSN).val());
+                    }
+                });
+                $(ssn).on('input change', function() {
+                    $(hidSSN).val($(this).val());
+                });
+            })(visibleSSN, hiddenSSN);
+        }
+        //]]>
+    </script>
+    
+    <script type="text/javascript">
+        nicEvents.subscribe(nicEvents.EVENT_SIGNUP_NODROP_INIT, function() { Signup.credco_init(); });
+        
+    </script>
+
+    <script>
+        /*<![CDATA[*/
+        var dynamicLiteEnable = 'false';
+        $(document).ready(function() {
+            if(dynamicLiteEnable === 'true'){
+                $('.credco-buttons').addClass('d-none');
+                $('#termsBottom').addClass("d-none");
+            }
+        });
+        //]]>
+    </script>
+
+    
+</body>
+
+</html>
